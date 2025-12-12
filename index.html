@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Judhur – Farm Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <span class="logo-mark">J</span>
+        <span class="logo-text">Judhur</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#products">Products</a>
+        <a href="#subscriptions">Subscriptions</a>
+        <a href="#profiles">Profiles</a>
+        <a href="#chat">Chat</a>
+        <button class="btn btn-ghost icon-btn" id="themeToggle" type="button">🌙</button>
+        <a href="signin.html" class="btn btn-ghost">Log in</a>
+        <a href="signup.html" class="btn btn-primary">Sign up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-layout">
+      <div class="hero-left">
+        <div class="hero-pill">Farm marketplace · Sellers & Customers</div>
+        <h1 class="hero-title">
+          Connect <span>farm sellers</span> with <span>customers</span> in one platform.
+        </h1>
+        <p class="hero-subtitle">
+          Judhur is an online marketplace where farm sellers list fresh products and tools,
+          and customers such as shops and supermarkets can discover, chat, and trade.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToSection('products')">
+            Explore marketplace
+          </button>
+          <button class="btn btn-outline" onclick="scrollToSection('subscriptions')">
+            View subscriptions
+          </button>
+        </div>
+        <div class="hero-meta">
+          <div>★ Ratings after every deal</div>
+          <div>✔ Verified sellers & customers</div>
+          <div>💰 All prices in OMR</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-card-title">Today’s fresh picks</div>
+              <div class="hero-card-subtitle">Recommended from nearby sellers</div>
+            </div>
+            <span class="hero-tag">Auto-rotating</span>
+          </div>
+
+          <div class="hero-products" id="heroProducts">
+            <!-- JS injects items here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS / MARKETPLACE -->
+  <section id="products">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Marketplace</div>
+          <div class="section-subtitle">
+            Search, filter, and explore current listings from Judhur sellers.
+          </div>
+        </div>
+      </div>
+
+      <div class="search-bar-row">
+        <div class="search-main">
+          <span class="search-icon">🔎</span>
+          <input
+            id="searchInput"
+            class="input input-search"
+            type="text"
+            placeholder="Search by product name..."
+          />
+        </div>
+
+        <select id="categoryFilter" class="input">
+          <option value="all">All categories</option>
+          <option value="Vegetables">Vegetables</option>
+          <option value="Fruits">Fruits</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Tools">Farm tools & equipment</option>
+        </select>
+
+        <select id="ratingFilter" class="input">
+          <option value="0">Any rating</option>
+          <option value="3">3★ and up</option>
+          <option value="4">4★ and up</option>
+          <option value="4.5">4.5★ and up</option>
+        </select>
+
+        <button class="btn btn-soft" onclick="resetFilters()">Reset</button>
+      </div>
+
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIPTIONS -->
+  <section id="subscriptions">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Seller subscriptions</div>
+          <div class="section-subtitle">
+            Daily, monthly, and yearly plans that boost visibility and unlock analytics.
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="card pricing-card">
+          <div class="pricing-label">Starter · Daily</div>
+          <div class="pricing-price">OMR 1<span>/day</span></div>
+          <p class="card-meta">
+            Try Judhur promotions for a short period with one highlighted product.
+          </p>
+          <ul class="pricing-list">
+            <li>1 product marked as “Sponsored”</li>
+            <li>Higher position in search for 24 hours</li>
+            <li>Basic views per product</li>
+          </ul>
+        </article>
+
+        <article class="card pricing-card pricing-card-featured">
+          <div class="pricing-label">Pro · Monthly</div>
+          <div class="pricing-price">OMR 15<span>/month</span></div>
+          <p class="card-meta">
+            For active sellers that need more reach and insights.
+          </p>
+          <ul class="pricing-list">
+            <li>Up to 10 products at the top of listings</li>
+            <li>Highlighted in “Today’s fresh picks” more often</li>
+            <li>Analytics dashboard (sales, profit, views)</li>
+            <li>“Pro Seller” badge on profile</li>
+          </ul>
+        </article>
+
+        <article class="card pricing-card">
+          <div class="pricing-label">Enterprise · Yearly</div>
+          <div class="pricing-price">OMR 150<span>/year</span></div>
+          <p class="card-meta">
+            For large farms and trading companies with ongoing contracts.
+          </p>
+          <ul class="pricing-list">
+            <li>Unlimited featured products</li>
+            <li>Highest visibility on the platform</li>
+            <li>Advanced reporting (future feature)</li>
+            <li>Dedicated account support</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">How Judhur works</div>
+          <div class="section-subtitle">
+            Simple steps for sellers and customers to connect and trade.
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="card card-soft">
+          <div class="step-number">1</div>
+          <h4 class="card-title">Sellers list their products</h4>
+          <p class="card-meta">
+            Farm sellers create a profile and add products like fruits, vegetables,
+            dairy, and farm tools with price and photos.
+          </p>
+        </div>
+        <div class="card card-soft">
+          <div class="step-number">2</div>
+          <h4 class="card-title">Customers search and filter</h4>
+          <p class="card-meta">
+            Customers such as shops and supermarkets search by category, rating, and price.
+          </p>
+        </div>
+        <div class="card card-soft">
+          <div class="step-number">3</div>
+          <h4 class="card-title">Chat, confirm, and rate</h4>
+          <p class="card-meta">
+            Both sides chat inside Judhur, confirm the deal offline, then submit ratings
+            to build trust.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILES -->
+  <section id="profiles">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Featured profiles</div>
+          <div class="section-subtitle">
+            A mix of active sellers and customers on Judhur.
+          </div>
+        </div>
+      </div>
+
+      <div id="profilesGrid" class="profiles-grid"></div>
+    </div>
+  </section>
+
+  <!-- CHAT -->
+  <section id="chat">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Chat demo</div>
+          <div class="section-subtitle">
+            This shows how sellers and customers could message inside the platform.
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-wrapper">
+        <div class="chat-contacts">
+          <div class="chat-contacts-title">Recent conversations</div>
+          <div id="chatContacts"></div>
+        </div>
+
+        <div class="chat-window">
+          <div class="chat-window-header">
+            <span id="chatWith">Select a contact</span>
+            <span class="chat-demo-label">Demo only</span>
+          </div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input-row">
+            <input
+              id="chatInput"
+              class="input"
+              type="text"
+              placeholder="Type a message…"
+              disabled
+            />
+            <button class="btn btn-primary" id="chatSendBtn" disabled>Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2025 Judhur. University project demo.</div>
+      <div class="footer-note">
+        Built to connect farm sellers & customers. Prices are shown in OMR.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Judhur – Seller Dashboard (Demo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <span class="logo-mark">J</span>
+        <span class="logo-text">Judhur</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#subscriptions">Subscriptions</a>
+        <a href="index.html#profiles">Profiles</a>
+        <a href="index.html#chat">Chat</a>
+        <button class="btn btn-ghost icon-btn" id="themeToggle" type="button">🌙</button>
+        <a href="signin.html" class="btn btn-ghost">Log out</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="auth-section" style="padding-top:1.8rem;">
+    <div class="container" style="max-width:900px;">
+      <div class="auth-card" style="margin-bottom:1.5rem;">
+        <h1 class="auth-title">Seller dashboard (demo)</h1>
+        <p class="auth-subtitle">
+          Logged in as <strong>seller_demo</strong> · Plan:
+          <strong>Pro – Monthly</strong> · All numbers below are example analytics.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.9rem;margin-top:0.7rem;">
+          <div class="card card-soft">
+            <div class="card-title">Total sales</div>
+            <div class="pricing-price" style="margin-top:0.25rem;">OMR 2,450</div>
+            <div class="card-meta">Since joining Judhur</div>
+          </div>
+          <div class="card card-soft">
+            <div class="card-title">Estimated profit</div>
+            <div class="pricing-price" style="margin-top:0.25rem;">OMR 980</div>
+            <div class="card-meta">After production costs</div>
+          </div>
+          <div class="card card-soft">
+            <div class="card-title">Orders completed</div>
+            <div class="pricing-price" style="margin-top:0.25rem;">73</div>
+            <div class="card-meta">Successful deals</div>
+          </div>
+          <div class="card card-soft">
+            <div class="card-title">Profile views</div>
+            <div class="pricing-price" style="margin-top:0.25rem;">1,234</div>
+            <div class="card-meta">Last 90 days</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <h2 class="auth-title" style="font-size:1.15rem;">Product performance</h2>
+        <p class="auth-subtitle">
+          Each product shows how many times it was viewed and an estimate of sales and revenue.
+        </p>
+
+        <div style="overflow-x:auto;margin-top:0.6rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+            <thead>
+              <tr style="text-align:left;border-bottom:1px solid #e5e7eb;">
+                <th style="padding:0.45rem 0.35rem;">Product</th>
+                <th style="padding:0.45rem 0.35rem;">Category</th>
+                <th style="padding:0.45rem 0.35rem;">Views</th>
+                <th style="padding:0.45rem 0.35rem;">Orders</th>
+                <th style="padding:0.45rem 0.35rem;">Revenue (OMR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e5e7eb;">
+                <td style="padding:0.45rem 0.35rem;">Organic Tomatoes</td>
+                <td style="padding:0.45rem 0.35rem;">Vegetables</td>
+                <td style="padding:0.45rem 0.35rem;">540</td>
+                <td style="padding:0.45rem 0.35rem;">32</td>
+                <td style="padding:0.45rem 0.35rem;">OMR 320</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e5e7eb;">
+                <td style="padding:0.45rem 0.35rem;">Sweet Oranges</td>
+                <td style="padding:0.45rem 0.35rem;">Fruits</td>
+                <td style="padding:0.45rem 0.35rem;">430</td>
+                <td style="padding:0.45rem 0.35rem;">27</td>
+                <td style="padding:0.45rem 0.35rem;">OMR 285</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e5e7eb;">
+                <td style="padding:0.45rem 0.35rem;">Farm Eggs</td>
+                <td style="padding:0.45rem 0.35rem;">Dairy</td>
+                <td style="padding:0.45rem 0.35rem;">390</td>
+                <td style="padding:0.45rem 0.35rem;">24</td>
+                <td style="padding:0.45rem 0.35rem;">OMR 165</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.35rem;">Irrigation Hose Kit</td>
+                <td style="padding:0.45rem 0.35rem;">Farm tools & equipment</td>
+                <td style="padding:0.45rem 0.35rem;">260</td>
+                <td style="padding:0.45rem 0.35rem;">14</td>
+                <td style="padding:0.45rem 0.35rem;">OMR 350</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="auth-footer" style="margin-top:1.1rem;">
+          In a real system, this dashboard would be generated automatically based on sales and views.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2025 Judhur. Demo seller dashboard.</div>
+      <div class="footer-note">
+        Example analytics for the Pro monthly seller <strong>seller_demo</strong>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
